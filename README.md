@@ -32,7 +32,7 @@ File directory
 Reference to accompanying publications 
 [1] H. Jeong, J. Guag, A. Kumar, "RF-induced Heating Estimation of a
 Stent in a 3T MRI using Transfer Function Approach with a Tabletop
-E-field Generator, IEEE Access (under review)
+E-field Generator," in IEEE Access, vol. 13, doi: 10.1109/ACCESS.2024.3518974.
 
 FDA software disclaimer
 This software and documentation (the "Software") were developed at the Food and Drug Administration 
