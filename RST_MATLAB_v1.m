@@ -1,4 +1,4 @@
-%% MATLAB code prepared for Regulatory Science Tool - Tabletop E-field generator for in vitro transfer fucntion model validation for device test in 1.5T and 3T MRI
+%% MATLAB code prepared for Regulatory Science Tool - Transfer function measurement system verification with SAIMD-U in 1.5T and 3T MRI
 prompt = "Enter the frequency to verify (64 or 128) MHz?   "; % choose the frequency to calculate (either 64 or 128)
 x=input(prompt);
 B0=sprintf('%.1f',1.5*x/64); % Relevant main magnetic field strength to the input frequency
@@ -44,17 +44,18 @@ figure; ah1(1)=subplot(2,1,1); fts=14; % Display subplot of transfer function mo
 plot(abs(nTF(:)),'-or');hold on; % Plot the scaled transfer function model measurement in magnitude
 plot(abs(data{2}),'-k'); hold on; % Plot the measurement target value in magnitude
 title ("Magnitude of SAIMD-U transfer function model at "+ B0 + " T (normalized max magnitude = 1)")
-xlabel('Distance from the tip(cm)');ylabel ('Magnitude(1/m)'); fontsize(gca, fts,'points'); 
+xlabel('Distance from the tip(mm)');ylabel ('Magnitude(1/mm)'); fontsize(gca, fts,'points'); 
 xl=length(nTF); axis([1 xl 0 max(abs(nTF)+0.1)]); grid on; 
 legend('Measured SAIMD-U (Magnitude)','Target value in magnitude','Location','NorthEastOutside'); legend boxoff
+conversion=10; addMM=@(x) sprintf('%.0f',x*conversion);  xticklabels(cellfun(addMM,num2cell(xticks'),'UniformOutput',false));
 hold on; ah2(2)=subplot(2,1,2);  % Subplot of transfer function model in phase 
 plot(ph,'-ob'); hold on  % Plot the scaled SAIMD-U transfer function model in phase (phase offset: phase at the SAIMD-U tip = 0)
 plot(data{3},'-k');  % Plot the SAIMD-U measurement target value in phase
 axis([1 xl min(ph) 0.2]); grid on; 
 title ("Phase of SAIMD-U transfer function model at " + B0 + " T (Phase offset: Phase at the SAIMD-U tip = 0)");
-xlabel('Distance from the tip(cm)');ylabel ('Phase (rad)'); fontsize(gca, fts,'points'); 
+xlabel('Distance from the tip(mm)');ylabel ('Phase (rad)'); fontsize(gca, fts,'points'); 
 legend('Measured SAIMD-U (Phase)','Target value in Phase','Location','NorthEastOutside'); legend boxoff; set(gcf,'WindowState','maximized')
-
+conversion=10; addMM=@(x) sprintf('%.0f',x*conversion);  xticklabels(cellfun(addMM,num2cell(xticks'),'UniformOutput',false));
 cd ..  % Change to the initial directory
 
 %% (Optional scaling step before Tier 3 assessment with human body models) Normalization that integral of transfer function model in magnitude equales one 
@@ -68,11 +69,13 @@ end
 figure; ah1(1)=subplot(2,1,1); % Display subplot of scaled transfer function in mangnitude
 plot(abs(nTF(:)),'-or');grid on; hold on  % scale the y-axis unit from 1/cm (i.e.,10mm per point) into 1/m by multiplying 100
 title ("Magnitude of SAIMD-U transfer function model at "+ B0 + " T (normalized integral of transfer function in magnitude = 1)")
-xl=length(nTF); xlabel('Distance from the tip(cm)');ylabel ('Magnitude(1/m)'); fontsize(gca, fts,'points'); 
+xl=length(nTF); xlabel('Distance from the tip(mm)');ylabel ('Magnitude(1/mm)'); fontsize(gca, fts,'points'); 
 legend('Measured SAIMD-U (Magnitude)','Location','NorthEastOutside');legend boxoff; 
 axis([1 xl 0 max(abs(nTF))+1]); grid on; 
+conversion=10; addMM=@(x) sprintf('%.0f',x*conversion); xticklabels(cellfun(addMM,num2cell(xticks'),'UniformOutput',false));
 hold on; ah2(2)=subplot(2,1,2); plot(ph,'-ob'); % Display subplot of scaled transfer function in phase
 axis([1 xl min(ph) 0.2]); grid on; 
 title ("Phase of SAIMD-U transfer function model at " + B0 + " T (Phase offset: Phase at the SAIMD-U tip = 0)");
-xlabel('Distance from the tip(cm)');ylabel ('Phase(rad)'); fontsize(gca, fts,'points'); grid on;
+xlabel('Distance from the tip(mm)');ylabel ('Phase(rad)'); fontsize(gca, fts,'points'); grid on;
 legend('Measured SAIMD-U (Phase)','Location','NorthEastOutside'); legend boxoff; set(gcf,'WindowState','maximized')
+conversion=10; addMM=@(x) sprintf('%.0f',x*conversion); xticklabels(cellfun(addMM,num2cell(xticks'),'UniformOutput',false));
