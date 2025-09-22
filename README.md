@@ -64,8 +64,11 @@ reported herein is not to be construed as either an actual or implied endorsemen
 products by the Department of Health and Human Services.
 
 Tool Reference 
+
 •	RST Reference Number: RST24ES06.01
+
 •	Date of Publication: 09/22/2025
+
 •	Recommended Citation: U.S. Food and Drug Administration. (2025). Test Field Diversity Method Using a Tabletop E-field Generator: In vitro Transfer Function Model Validation for Implantable Medical Device Safety Assessment in 1.5T and 3T MRI (RST24ES06.01). https://cdrh-rst.fda.gov/test-field-diversity-method-using-tabletop-e-field-generator-vitro-transfer-function-model
 
 
