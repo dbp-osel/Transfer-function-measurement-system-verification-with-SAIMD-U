@@ -33,7 +33,7 @@ File directory
 [1] H. Jeong, J. W. Guag and A. Kumar, "RF-Induced Heating Estimation of a Stent in a 3T MRI Using Transfer Function Approach With a Tabletop E-Field Generator," in IEEE Access, vol. 12, pp. 191945-191954, 2024, doi: 10.1109/ACCESS.2024.3518974H.
 
 ### Disclaimer
-1. About the Catalog of Regulatory Science Tools
+1. About the Catalog of Regulatory Science Tools \
 The enclosed tool is part of the [Catalog of Regulatory Science Tools](https://cdrh-rst.fda.gov), which provides a peer-reviewed resource for
 stakeholders to use where standards and qualified Medical Device Development Tools (MDDTs) do not yet exist.
 These tools do not replace FDA-recognized standards or MDDTs. This catalog collates a variety of regulatory science tools
